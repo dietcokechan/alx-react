@@ -33,4 +33,19 @@ module.exports = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
+  devtool: "inline-source-map",
+  devServer: {
+    static: path.join(__dirname, "./public"),
+    compress: true,
+    port: 8564,
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin(),
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
 };
