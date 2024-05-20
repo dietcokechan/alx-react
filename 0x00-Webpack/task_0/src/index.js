@@ -1,5 +1,5 @@
-import $ from 'jquery';
+const $ = require('jquery');
 
-$("p").add("Holberton Dashboard").appendTo("body");
-$("p").add("Dashboard data for the students").appendTo("body");
-$("p").add("Copyright - Holberton School").appendTo("body");
+$("body").append("<p>Holberton Dashboard</p>");
+$("body").append("<p>Dashboard data for the students</p>");
+$("body").append("<p>Copyright - Holberton School</p>");
