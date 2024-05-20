@@ -3,24 +3,30 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: 'production',
-  entry: './js/dashboard_main.js',
+  mode: "development",
+  entry: {
+    all: [
+      "./modules/header/header.js",
+      "./modules/body/body.js",
+      "./modules/footer/footer.js",
+    ],
+  },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public'),
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "public"),
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          'file-loader',
+          "file-loader",
           {
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
               bypassOnDebug: true,
               disable: true,
@@ -35,19 +41,16 @@ module.exports = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   devServer: {
-    static: path.join(__dirname, './public'),
+    static: path.join(__dirname, "./public"),
     compress: true,
     port: 8564,
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
-  ],
+  plugins: [new CleanWebpackPlugin(), new HtmlWebpackPlugin()],
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: "all",
     },
   },
 };
