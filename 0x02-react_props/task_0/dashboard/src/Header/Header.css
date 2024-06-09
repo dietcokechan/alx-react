@@ -1,0 +1,25 @@
+.App-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  border-bottom: 3px solid var(--hred);
+}
+
+.App-header img {
+  width: 200px;
+  height: 200px;
+  margin: 0 10px;
+}
+
+.App-header h1 {
+  margin: auto auto auto 0;
+  font-weight: bold;
+  color: var(--hred);
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  border-bottom: 3px solid var(--hred);
+}
